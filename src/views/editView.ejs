@@ -8,21 +8,19 @@
 <body>
     <h1>Editar Carro: <%= vehicle.nome %></h1>
 
-    <form action="/editar/<%= vehicle.id %>" method="post">
+    <form action="/update-vehicle/<%= vehicle.id %>" method="post">
         
-        <input type="hidden" name="_method" value="PUT" />
-
         <div class="form-group">
             <label for="id">ID</label>
             <input
                 type="text"
                 class="form-control"
                 id="id"
-                name="id"
+                name="id_display"
                 value="<%= vehicle.id %>"
-                placeholder="ID"
                 readonly 
             />
+            <input type="hidden" name="id" value="<%= vehicle.id %>" />
         </div>
 
         <div class="form-group">
