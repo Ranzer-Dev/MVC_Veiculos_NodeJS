@@ -1,0 +1,20 @@
+{
+  "name": "atividademvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "4 - Exemplo Completo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "express": "^5.1.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "nodemon": "^3.1.10"
+  }
+}
