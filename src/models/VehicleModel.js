@@ -18,14 +18,19 @@ module.exports = class VehicleModel {
         return this.vehicles;
     }
 
+    GetById(id) {
+
+        return this.vehicles.find((x) => x.id == id);
+    }
+
     Save(id, nome) {
         let veihcle = new VehicleModel(nome, id)
         this.vehicles.push(veihcle)
     };
 
     Update(id, nome) {
-        this.id = id;
-        this.nome = nome;
+        const vehicle = this.vehicles.find((x) => x.id == id);
+        vehicle.nome = nome;
     };
 
     Delete(id) {

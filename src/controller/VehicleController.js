@@ -14,6 +14,19 @@ exports.save = (req, resp) => {
 exports.delete = (req, resp) => {
   let { id } = req.params;
   vehicle.Delete(id);
-  let result = contact.GetAll();
-  resp.render("homeView", { contacts: result });
+  let result = vehicle.GetAll();
+  resp.render("homeView", { vehicle: result, saved: false });
+};
+
+exports.editForm = (req, resp) => {
+  let { id } = req.params;
+  const veiculo = vehicle.GetById(id); 
+  resp.render("editView", { vehicle: veiculo, saved: false });
+}
+
+exports.update = (req, resp) => {
+  let { id } = req.params;
+  const novoNome = req.body.nome;
+  vehicle.Update(id, novoNome); 
+  resp.redirect('/'); 
 };
